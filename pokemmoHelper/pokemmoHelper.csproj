@@ -12,6 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +49,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>48A2531546692B00DF1523E1923BA16BF478DF7E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>pokemmoHelper_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -49,6 +78,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analyze.cs" />
+    <Compile Include="Moves.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
     <Compile Include="SomeStructs.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -63,16 +95,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx" />
     <None Include="packages.config" />
+    <None Include="pokemmoHelper_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,6 +110,513 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\bug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\dragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\electr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\fight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\flying.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\ghost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\ground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\ice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\poison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\psychc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\rock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\steel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\typenone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Types\water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\src\NU\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p006.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p031.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p036.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p042.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p049.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p051.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p057.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p059.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p065.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p068.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p073.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p080.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p082.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p091.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p094.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p123.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p130.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p139.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p141.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p142.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p143.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p149.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p157.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p160.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p169.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p184.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p196.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p197.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p199.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p202.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p205.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p208.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p212.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p214.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p226.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p227.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p229.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p230.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p233.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p237.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p248.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p254.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p260.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p264.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p272.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p277.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p279.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p282.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p286.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p308.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p310.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p315.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p330.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p334.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p350.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p351.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p356.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p359.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p373.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p376.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p389.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p392.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p395.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p398.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p405.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p407.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p409.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p411.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p413.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p414.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p424.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p428.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p429.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p430.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p432.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p435.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p437.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p441.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p442.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p445.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p448.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p452.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p454.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p460.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p461.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p462.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p464.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p466.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p468.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p469.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p472.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p473.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p474.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p475.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p477.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p479.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p497.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p526.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p530.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p534.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p547.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p549.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p553.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p555.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p560.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p561.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p563.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p571.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p579.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p584.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p593.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p596.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p598.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p604.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p609.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p612.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p615.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p617.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p620.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p621.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p623.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p625.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p628.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p630.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p632.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p635.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p637.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

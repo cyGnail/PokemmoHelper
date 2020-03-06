@@ -44,7 +44,7 @@
             this.button_pm4 = new System.Windows.Forms.Button();
             this.button_pm3 = new System.Windows.Forms.Button();
             this.button_pm2 = new System.Windows.Forms.Button();
-            this.textBox = new System.Windows.Forms.TextBox();
+            this.textBox0 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox_ev = new System.Windows.Forms.TextBox();
@@ -69,7 +69,7 @@
             // 
             this.button_generate.Font = new System.Drawing.Font("幼圆", 12F);
             this.button_generate.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_generate.Location = new System.Drawing.Point(125, 900);
+            this.button_generate.Location = new System.Drawing.Point(121, 919);
             this.button_generate.Name = "button_generate";
             this.button_generate.Size = new System.Drawing.Size(150, 50);
             this.button_generate.TabIndex = 0;
@@ -80,13 +80,11 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
             this.radioButton1.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.radioButton1.Location = new System.Drawing.Point(51, 103);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(53, 25);
             this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "OU";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
@@ -250,18 +248,20 @@
             this.button_pm2.Visible = false;
             this.button_pm2.Click += new System.EventHandler(this.button_pm2_Click);
             // 
-            // textBox
+            // textBox0
             // 
-            this.textBox.Location = new System.Drawing.Point(8, 103);
-            this.textBox.Multiline = true;
-            this.textBox.Name = "textBox";
-            this.textBox.ReadOnly = true;
-            this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox.Size = new System.Drawing.Size(191, 184);
-            this.textBox.TabIndex = 17;
+            this.textBox0.Font = new System.Drawing.Font("幼圆", 10F);
+            this.textBox0.Location = new System.Drawing.Point(8, 103);
+            this.textBox0.Multiline = true;
+            this.textBox0.Name = "textBox0";
+            this.textBox0.ReadOnly = true;
+            this.textBox0.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox0.Size = new System.Drawing.Size(191, 184);
+            this.textBox0.TabIndex = 17;
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("幼圆", 10F);
             this.textBox1.Location = new System.Drawing.Point(199, 103);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -275,7 +275,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(8, 293);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(160, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
@@ -314,7 +314,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("幼圆", 12F);
-            this.label9.Location = new System.Drawing.Point(5, 551);
+            this.label9.Location = new System.Drawing.Point(5, 548);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 16);
             this.label9.TabIndex = 26;
@@ -324,7 +324,7 @@
             // 
             this.button_end.Font = new System.Drawing.Font("幼圆", 12F);
             this.button_end.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_end.Location = new System.Drawing.Point(125, 900);
+            this.button_end.Location = new System.Drawing.Point(121, 919);
             this.button_end.Name = "button_end";
             this.button_end.Size = new System.Drawing.Size(150, 50);
             this.button_end.TabIndex = 27;
@@ -347,12 +347,13 @@
             this.pictureBox_type1.Location = new System.Drawing.Point(8, 477);
             this.pictureBox_type1.Name = "pictureBox_type1";
             this.pictureBox_type1.Size = new System.Drawing.Size(106, 33);
-            this.pictureBox_type1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_type1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_type1.TabIndex = 29;
             this.pictureBox_type1.TabStop = false;
             // 
             // textBox_type
             // 
+            this.textBox_type.Font = new System.Drawing.Font("幼圆", 10F);
             this.textBox_type.Location = new System.Drawing.Point(178, 460);
             this.textBox_type.Multiline = true;
             this.textBox_type.Name = "textBox_type";
@@ -376,45 +377,77 @@
             this.pictureBox_type2.Location = new System.Drawing.Point(8, 511);
             this.pictureBox_type2.Name = "pictureBox_type2";
             this.pictureBox_type2.Size = new System.Drawing.Size(106, 33);
-            this.pictureBox_type2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_type2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_type2.TabIndex = 33;
             this.pictureBox_type2.TabStop = false;
             // 
             // comboBox
             // 
+            this.comboBox.AllowDrop = true;
+            this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox.Font = new System.Drawing.Font("幼圆", 9F);
             this.comboBox.FormattingEnabled = true;
+            this.comboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.comboBox.Items.AddRange(new object[] {
+            "无影响(已消耗)",
+            "生命宝珠",
+            "属性宝石",
+            "讲究眼镜/头带",
+            "讲究围巾",
+            "进化奇石",
+            "剩饭",
+            "黑色污泥",
+            "树果",
+            "丝绸围巾(等)",
+            "后攻之尾",
+            "气势披带",
+            "贝壳之铃",
+            "美丽空壳",
+            "天气石",
+            "光之黏土",
+            "心灵香草",
+            "火焰宝珠",
+            "剧毒宝珠",
+            "广角镜"});
             this.comboBox.Location = new System.Drawing.Point(292, 433);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(95, 20);
             this.comboBox.TabIndex = 34;
+            this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
             // radioButton_ability1
             // 
             this.radioButton_ability1.AutoSize = true;
-            this.radioButton_ability1.Location = new System.Drawing.Point(302, 325);
+            this.radioButton_ability1.Checked = true;
+            this.radioButton_ability1.Font = new System.Drawing.Font("幼圆", 12F);
+            this.radioButton_ability1.Location = new System.Drawing.Point(304, 329);
             this.radioButton_ability1.Name = "radioButton_ability1";
-            this.radioButton_ability1.Size = new System.Drawing.Size(95, 16);
+            this.radioButton_ability1.Size = new System.Drawing.Size(122, 20);
             this.radioButton_ability1.TabIndex = 35;
             this.radioButton_ability1.TabStop = true;
             this.radioButton_ability1.Text = "radioButton4";
+            this.radioButton_ability1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton_ability1.UseVisualStyleBackColor = true;
+            this.radioButton_ability1.CheckedChanged += new System.EventHandler(this.radioButton_ability1_CheckedChanged);
             // 
             // radioButton_ability2
             // 
             this.radioButton_ability2.AutoSize = true;
-            this.radioButton_ability2.Location = new System.Drawing.Point(302, 361);
+            this.radioButton_ability2.Font = new System.Drawing.Font("幼圆", 12F);
+            this.radioButton_ability2.Location = new System.Drawing.Point(304, 364);
             this.radioButton_ability2.Name = "radioButton_ability2";
-            this.radioButton_ability2.Size = new System.Drawing.Size(95, 16);
+            this.radioButton_ability2.Size = new System.Drawing.Size(122, 20);
             this.radioButton_ability2.TabIndex = 36;
-            this.radioButton_ability2.TabStop = true;
             this.radioButton_ability2.Text = "radioButton5";
+            this.radioButton_ability2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioButton_ability2.UseVisualStyleBackColor = true;
+            this.radioButton_ability2.CheckedChanged += new System.EventHandler(this.radioButton_ability2_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 961);
+            this.ClientSize = new System.Drawing.Size(399, 976);
             this.Controls.Add(this.radioButton_ability2);
             this.Controls.Add(this.radioButton_ability1);
             this.Controls.Add(this.comboBox);
@@ -430,7 +463,7 @@
             this.Controls.Add(this.textBox_ev);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.textBox0);
             this.Controls.Add(this.button_pm2);
             this.Controls.Add(this.button_pm3);
             this.Controls.Add(this.button_pm4);
@@ -447,6 +480,9 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button_generate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Pokemmo对战助手";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -475,7 +511,7 @@
         private System.Windows.Forms.Button button_pm4;
         private System.Windows.Forms.Button button_pm3;
         private System.Windows.Forms.Button button_pm2;
-        private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.TextBox textBox0;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox_ev;

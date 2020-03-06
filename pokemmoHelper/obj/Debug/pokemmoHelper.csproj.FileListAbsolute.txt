@@ -28,7 +28,6 @@ C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\pokemmoHelper\obj\De
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Debug\pokemmoHelper.exe.config
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Debug\pokemmoHelper.exe
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Debug\pokemmoHelper.pdb
-C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHelper.csprojAssemblyReference.cache
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHelper.Form1.resources
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHelper.Properties.Resources.resources
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHelper.csproj.GenerateResource.cache
@@ -37,3 +36,8 @@ C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHel
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Debug\Newtonsoft.Json.dll
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Debug\Newtonsoft.Json.xml
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHelper.csproj.CopyComplete
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Debug\pokemmoHelper.exe.manifest
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Debug\pokemmoHelper.application
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHelper.csprojAssemblyReference.cache
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHelper.exe.manifest
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Debug\pokemmoHelper.application

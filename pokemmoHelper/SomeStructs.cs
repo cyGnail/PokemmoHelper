@@ -64,4 +64,16 @@ namespace pokemmoHelper
             this.Description = d;
         }
     }
+
+    public struct Move
+    {
+        public string Name;
+        public string MoveType;
+
+        public Move(string n,string t)
+        {
+            this.Name = n;
+            this.MoveType = t;
+        }
+    }
 }
