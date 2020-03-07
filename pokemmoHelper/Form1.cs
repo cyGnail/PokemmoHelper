@@ -18,9 +18,10 @@ namespace pokemmoHelper
         private static Button[] bu_ttons;
         private static ButtonWithPokemon[] pokemonButtons = new ButtonWithPokemon[6];
         private static int pokemonNum = 0;
+        private static int[] fourMoves = new int[6] { 0, 0, 0, 0, 0, 0 };
 
         private const int OUNum = 41;
-        private const int UUNum = 64;
+        private const int UUNum = 62;
         private const int NUNum = 47;
         private static ButtonWithPokemon[] OUButtons = new ButtonWithPokemon[OUNum];
         private static ButtonWithPokemon[] UUButtons = new ButtonWithPokemon[UUNum];
@@ -38,6 +39,9 @@ namespace pokemmoHelper
 
         public Form1()
         {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = (Point)new Size(0, 0);
+
             InitializeComponent();
 
             //初始化数组
@@ -65,15 +69,17 @@ namespace pokemmoHelper
             CreateButtons(NUButtons, Pokemon.NUPokemons, "NU");
 
             //初始化技能按钮
-            CreateButtonsAgain(moveButtons[0]);
-            CreateButtonsAgain(moveButtons[1]);
-            CreateButtonsAgain(moveButtons[2]);
-            CreateButtonsAgain(moveButtons[3]);
-            CreateButtonsAgain(moveButtons[4]);
-            CreateButtonsAgain(moveButtons[5]);
+            CreateButtonsAgain(moveButtons[0], "p1");
+            CreateButtonsAgain(moveButtons[1], "p2");
+            CreateButtonsAgain(moveButtons[2], "p3");
+            CreateButtonsAgain(moveButtons[3], "p4");
+            CreateButtonsAgain(moveButtons[4], "p5");
+            CreateButtonsAgain(moveButtons[5], "p6");
 
             UpdateInitialForm();
+
         }
+
 
 
         /// <summary>
@@ -137,9 +143,9 @@ namespace pokemmoHelper
             display_1 += Analyze.SubAnalyze(myPokemons, "幽灵", "普通", "0", "0", "0", "0", "0", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "超能", "恶", "0", "0", "0", "0", "0", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "毒", "钢", "0", "0", "0", "0", "0", "0");
-            display_1 += Analyze.SubAnalyze(myPokemons, "火（潜在）", "0", "0", "0", "引火", "0", "0", "0");
-            display_1 += Analyze.SubAnalyze(myPokemons, "水（潜在）", "0", "0", "0", "引水", "储水", "0", "0");
-            display_1 += Analyze.SubAnalyze(myPokemons, "草（潜在）", "0", "0", "0", "食草", "0", "0", "0");
+            display_1 += Analyze.SubAnalyze(myPokemons, "火(潜在)", "0", "0", "0", "引火", "0", "0", "0");
+            display_1 += Analyze.SubAnalyze(myPokemons, "水(潜在)", "0", "0", "0", "引水", "储水", "0", "0");
+            display_1 += Analyze.SubAnalyze(myPokemons, "草(潜在)", "0", "0", "0", "食草", "0", "0", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "中毒", "钢", "毒", "0", "免疫", "魔法防守", "毒疗", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "灼伤", "火", "0", "0", "毅力", "魔法防守", "水幕", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "麻痹", "电", "0", "0", "柔软", "0", "0", "0");
@@ -154,6 +160,32 @@ namespace pokemmoHelper
             display_1 += Analyze.SubAnalyze(myPokemons, "畏缩", "0", "0", "0", "精神力", "0", "0", "0");
 
             textBox0.Text = display_1;
+
+            string display_2 = "角色分析（潜在）：\r\n";
+            display_2 += Analyze.RoleAnalyze(myPokemons, "出钉", "0", "0", "0", "0", "隐形岩", "撒菱", "毒菱", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "清钉", "0", "0", "0", "0", "高速旋转", "清除浓雾", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "天气手", "降雨", "日照", "扬沙", "降雪", "0", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "挑衅", "0", "0", "0", "0", "挑衅", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "空间手", "0", "0", "0", "0", "戏法空间", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "物理强化", "0", "0", "0", "0", "龙之舞", "剑舞", "健美", "磨爪", "腹鼓", "点穴");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "破壳强化", "0", "0", "0", "0", "0", "0", "0", "0", "破壳", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "诅咒", "0", "0", "0", "0", "诅咒", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "特殊强化", "0", "0", "0", "0", "蝶舞", "诡计", "冥想", "0", "0", "0");       
+            display_2 += Analyze.RoleAnalyze(myPokemons, "生长", "0", "0", "0", "0", "生长", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "聚气", "0", "0", "0", "0", "聚气", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "反强化(消除)", "0", "0", "0", "0", "再来一次", "黑雾", "清除之烟", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "反强化(退场)", "0", "0", "0", "0", "龙尾", "0", "0", "巴投", "吼叫", "吹飞");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "物理先制", "0", "0", "0", "0", "子弹拳", "神速", "冰砾", "音速拳", "水流喷射", "影子偷袭");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "特殊先制", "0", "0", "0", "0", "真空波", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "条件先制", "0", "0", "0", "0", "击掌奇袭", "突袭", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "游击手", "0", "0", "0", "0", "急速折返", "伏特替换", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "开墙手", "0", "0", "0", "0", "反射壁", "光墙", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "抓人(及追打)", "踩影", "沙穴", "磁力", "0", "追打", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "静电", "静电", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "火焰之躯", "火焰之躯", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "木乃伊", "木乃伊", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            display_2 += Analyze.RoleAnalyze(myPokemons, "孢子", "孢子", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            textBox1.Text = display_2;
         }
 
         
@@ -195,7 +227,7 @@ namespace pokemmoHelper
         /// <summary>
         /// 生成技能按钮
         /// </summary>
-        private void CreateButtonsAgain(Button[] buttons)
+        private void CreateButtonsAgain(Button[] buttons, string str)
         {
             const int buttonLength = 70;
             const int buttonWidth = 30;
@@ -210,11 +242,12 @@ namespace pokemmoHelper
                 buttons[i] = new Button();
                 buttons[i].Location = points[i];
                 buttons[i].Size = new Size(buttonLength, buttonWidth);
-                buttons[i].Name = string.Format("{0}button_{1}", i, i);
+                buttons[i].Name = string.Format("{0}button_{1}", str, i);
                 buttons[i].BackColor = Color.Empty;                
                 buttons[i].Font = new Font("幼圆", 9);
                 buttons[i].Parent = this;
                 this.Controls.Add(buttons[i]);
+                buttons[i].Click += new EventHandler(MoveButton_Click);
             }
         }
 
@@ -294,24 +327,73 @@ namespace pokemmoHelper
                                     break;
                                 }
                         }
-                        else
-                            if (pokemonNum < 6)
-                            {
-                                buttons[i].Btn.BackColor = Color.Blue;
-                                buttons[i].Btn.ForeColor = Color.White;
-                                pokemonNum++;
-                                for (int j = 0; j < 6; j++)
-                                    if (labels[j].Text == "请选择宝可梦")
-                                    {
-                                        labels[j].Text = buttons[i].Pm.Name;
-                                        break;
-                                    }
-                                pokemonButtons[pokemonNum - 1].Pm = buttons[i].Pm;
-                                pokemonButtons[pokemonNum - 1].Btn.Text = pokemonButtons[pokemonNum - 1].Pm.Name;
-                            }
+                        else if (pokemonNum < 6)
+                        {
+                            buttons[i].Btn.BackColor = Color.Blue;
+                            buttons[i].Btn.ForeColor = Color.White;
+                            pokemonNum++;
+                            for (int j = 0; j < 6; j++)
+                                if (labels[j].Text == "请选择宝可梦")
+                                {
+                                    labels[j].Text = buttons[i].Pm.Name;
+                                    break;
+                                }
+                            pokemonButtons[pokemonNum - 1].Pm = buttons[i].Pm;
+                            pokemonButtons[pokemonNum - 1].Btn.Text = pokemonButtons[pokemonNum - 1].Pm.Name;
+                        }
                     }
                 }
             }         
+        }
+
+
+        /// <summary>
+        /// 技能按钮点击事件
+        /// </summary>
+        private static void MoveButton_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            switch (lastClick)
+            {
+                case 1:
+                    ChooseMoves(moveButtons[0]);
+                    break;
+                case 2:
+                    ChooseMoves(moveButtons[1]);
+                    break;
+                case 3:
+                    ChooseMoves(moveButtons[2]);
+                    break;
+                case 4:
+                    ChooseMoves(moveButtons[3]);
+                    break;
+                case 5:
+                    ChooseMoves(moveButtons[4]);
+                    break;
+                case 6:
+                    ChooseMoves(moveButtons[5]);
+                    break;
+            }
+
+            void ChooseMoves(Button[] buttons)
+            {
+                for (int i = 0; i < buttons.Length; i++)
+                    if (btn.Name == buttons[i].Name)
+                    {
+                        if (buttons[i].BackColor == Color.Blue)
+                        {
+                            buttons[i].BackColor = Color.Empty;
+                            buttons[i].ForeColor = Color.Black;
+                            fourMoves[lastClick - 1]--;
+                        }
+                        else if (fourMoves[lastClick - 1] < 4) 
+                        {
+                            buttons[i].BackColor = Color.Blue;
+                            buttons[i].ForeColor = Color.White;
+                            fourMoves[lastClick - 1]++;
+                        }
+                    }
+            }
         }
 
 
@@ -575,22 +657,27 @@ namespace pokemmoHelper
         {
             List<string> list = new List<string>();
             DirectoryInfo dir = new DirectoryInfo(dir1);
-            FileInfo[] fileInfo = dir.GetFiles();
+            if (Directory.Exists(dir1))
+            {
+                FileInfo[] fileInfo = dir.GetFiles();
 
-            for (int i = 0; i < fileInfo.Length; i++)
-                list.Add(fileInfo[i].FullName);
+                for (int i = 0; i < fileInfo.Length; i++)
+                    list.Add(fileInfo[i].FullName);
+            }
 
             return list;
         }
 
         public static void ImportJson(List<Pokemon> pl, string str)
         {
-            List<string> jsonList = GetAllDir(System.Environment.CurrentDirectory + string.Format(@"\src\{0}\", str));
+            List<string> jsonList = GetAllDir(Application.StartupPath + string.Format(@"\src\{0}\", str));
             for (int i = 0; i < jsonList.Count; i++) 
             {
                 string jsonText = new StreamReader(jsonList[i]).ReadToEnd();
                 pl.Add(new Pokemon());
                 Newtonsoft.Json.Linq.JObject jobject = (Newtonsoft.Json.Linq.JObject)Newtonsoft.Json.JsonConvert.DeserializeObject(jsonText);
+                if (jobject == null)
+                    return;
                 pl[i].Name = jobject["官方译名"].ToString();
                 pl[i].Index = jobject["编号"].ToString();
                 pl[i].MyEthnicValue.HP = Convert.ToInt16(jobject["种族值"]["HP"]);
@@ -615,8 +702,11 @@ namespace pokemmoHelper
                 pl[i].AllAbilities.Add(new Ability(jobject["特性"]["特性1"].ToString(), ""));
                 pl[i].AllAbilities.Add(new Ability(jobject["特性"]["特性2"].ToString(), ""));
 
-                string jsonText_1 = new StreamReader(System.Environment.CurrentDirectory + @"\src\" + jobject["技能池"].ToString().Replace("/", @"\")).ReadToEnd();
+                string jsonText_1 = new StreamReader(Application.StartupPath + @"\src\" + jobject["技能池"].ToString().Replace("/", @"\")).ReadToEnd();
                 Newtonsoft.Json.Linq.JObject subjobject = (Newtonsoft.Json.Linq.JObject)Newtonsoft.Json.JsonConvert.DeserializeObject(jsonText_1);
+                if (subjobject == null)
+                    return;
+
                 for (int j = 0; ; j++) 
                 {
                     if (subjobject.ContainsKey(string.Format("技能{0}", j + 1)))
@@ -638,12 +728,30 @@ namespace pokemmoHelper
                     for (int j = pl[i].AllMoves.Count - 1; j >= 0; j--)
                         if (pl[i].AllMoves[j].MoveType == "物理")
                             pl[i].AllMoves.Remove(pl[i].AllMoves[j]);
-                Analyze.removeMove(pl[i], "暴鲤龙", "强力鞭打", "0", "0");
-                Analyze.removeMove(pl[i], "三首恶龙", "流星群", "0", "0");
-                Analyze.removeMove(pl[i], "水箭龟", "恶之波动", "龙之波动", "波导弹");
-                Analyze.removeMove(pl[i], "班基拉斯", "大晴天", "求雨", "潮旋");
-                Analyze.removeMove(pl[i], "班基拉斯", "火焰牙", "雷电牙", "冰冻牙");
-                Analyze.removeMove(pl[i], "快龙", "觉醒力量", "硬撑", "0");
+
+                Analyze.RemoveMove(pl[i], "暴鲤龙", "强力鞭打", "0", "0");
+                Analyze.RemoveMove(pl[i], "三首恶龙", "流星群", "0", "0");
+                Analyze.RemoveMove(pl[i], "水箭龟", "恶之波动", "龙之波动", "波导弹");
+                Analyze.RemoveMove(pl[i], "班基拉斯", "大晴天", "求雨", "潮旋");
+                Analyze.RemoveMove(pl[i], "班基拉斯", "火焰牙", "雷电牙", "冰冻牙");
+                Analyze.RemoveMove(pl[i], "快龙", "觉醒力量", "硬撑", "0");
+                Analyze.RemoveMove(pl[i], "达摩狒狒", "再来一次", "健美", "梦话");
+                Analyze.RemoveMove(pl[i], "耿鬼", "黑雾", "再来一次", "清除之烟");
+                Analyze.RemoveMove(pl[i], "死神棺", "诡计", "0", "0");
+                Analyze.RemoveMove(pl[i], "梦妖魔", "诡计", "0", "0");
+                Analyze.RemoveMove(pl[i], "清洗洛托姆", "过热", "飞叶风暴", "暴风雪");
+                Analyze.RemoveMove(pl[i], "清洗洛托姆", "空气斩", "0", "0");
+                Analyze.RemoveMove(pl[i], "过热洛托姆", "水炮", "飞叶风暴", "暴风雪");
+                Analyze.RemoveMove(pl[i], "过热洛托姆", "空气斩", "0", "0");
+                Analyze.RemoveMove(pl[i], "冻结洛托姆", "过热", "飞叶风暴", "水炮");
+                Analyze.RemoveMove(pl[i], "冻结洛托姆", "空气斩", "0", "0");
+                Analyze.RemoveMove(pl[i], "旋转洛托姆", "过热", "飞叶风暴", "暴风雪");
+                Analyze.RemoveMove(pl[i], "旋转洛托姆", "水炮", "0", "0");
+                Analyze.RemoveMove(pl[i], "切割洛托姆", "过热", "水炮", "暴风雪");
+                Analyze.RemoveMove(pl[i], "切割洛托姆", "空气斩", "0", "0");
+
+                Analyze.AddMove(pl[i], "班基拉斯", "追打", "物理");
+                Analyze.AddMove(pl[i], "玛狃拉", "追打", "物理");
             }
         }
 

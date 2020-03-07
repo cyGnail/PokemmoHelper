@@ -1,0 +1,15 @@
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Release\pokemmoHelper.exe.config
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Release\pokemmoHelper.exe.manifest
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Release\pokemmoHelper.application
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Release\pokemmoHelper.exe
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Release\pokemmoHelper.pdb
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Release\Newtonsoft.Json.dll
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\bin\Release\Newtonsoft.Json.xml
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.Form1.resources
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.Properties.Resources.resources
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.csproj.GenerateResource.cache
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.exe.manifest
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.application
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.csproj.CopyComplete
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.exe
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.pdb

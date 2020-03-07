@@ -50,5 +50,13 @@ namespace pokemmoHelper
             this.item = "无影响(已消耗)";
             this.MyAbility = "";
         }
+
+        public bool HaveMove(string move)
+        {
+            for (int i = 0; i < this.AllMoves.Count; i++) 
+                if (move == this.AllMoves[i].Name)
+                    return true;
+            return false;
+        }
     }
 }

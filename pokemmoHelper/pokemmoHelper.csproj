@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -60,6 +60,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ball_72px_1226110_easyicon.net.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -617,6 +620,24 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p479_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p479_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p479_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p479_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pokemons\p479_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ball_72px_1226110_easyicon.net.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button_generate = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -408,7 +409,8 @@
             "心灵香草",
             "火焰宝珠",
             "剧毒宝珠",
-            "广角镜"});
+            "广角镜",
+            "红牌"});
             this.comboBox.Location = new System.Drawing.Point(292, 433);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(95, 20);
@@ -481,10 +483,12 @@
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button_generate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Pokemmo对战助手";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_type1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_type2)).EndInit();
