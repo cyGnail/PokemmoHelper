@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="pokemmoHelper.exe.manifest" size="4666">
+    <dependentAssembly dependencyType="install" codebase="pokemmoHelper.exe.manifest" size="4614">
       <assemblyIdentity name="pokemmoHelper.exe" version="1.0.0.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iy0klelhz+xo9wHjb0qJD8UbLbSKnnK+TJrRYnSVOuE=</dsig:DigestValue>
+        <dsig:DigestValue>33QBLnYp8xHgAAL/G0KT0z346iDo9ogzNxrwskKty4s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

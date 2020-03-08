@@ -454,8 +454,22 @@ namespace pokemmoHelper
             {
                 if (Types.AllTypes[i].Name == "地面" && mp.MyAbility == "飘浮")
                     resistIndex = 0;
+                else if (Types.AllTypes[i].Name == "电" && (mp.MyAbility == "蓄电" || mp.MyAbility == "避雷针" || mp.MyAbility == "电气引擎")) 
+                    resistIndex = 0;
+                else if (Types.AllTypes[i].Name == "水" && (mp.MyAbility == "引水" || mp.MyAbility == "储水")) 
+                    resistIndex = 0;
+                else if (Types.AllTypes[i].Name == "火" && (mp.MyAbility == "引火"))
+                    resistIndex = 0;
+                else if (Types.AllTypes[i].Name == "草" && (mp.MyAbility == "食草"))
+                    resistIndex = 0;
                 else
                     resistIndex = mp.Type1.Resist[i] * mp.Type2.Resist[i];
+
+                if (Types.AllTypes[i].Name == "火" && (mp.MyAbility == "耐热" || mp.MyAbility == "厚脂肪")) 
+                    resistIndex *= 0.5f;
+                if (Types.AllTypes[i].Name == "冰" && mp.MyAbility == "厚脂肪")
+                    resistIndex *= 0.5f;
+
                 if (resistIndex < 0.1)
                     resist_0 += (Types.AllTypes[i].Name + " ");
                 if (resistIndex < 0.3 && resistIndex > 0.2)

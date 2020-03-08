@@ -13,3 +13,4 @@ C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoH
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.csproj.CopyComplete
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.exe
 C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.pdb
+C:\Users\84225\Documents\GitHub\PokemmoHelper\pokemmoHelper\obj\Release\pokemmoHelper.csprojAssemblyReference.cache

@@ -62,7 +62,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>ball_72px_1226110_easyicon.net.ico</ApplicationIcon>
+    <ApplicationIcon>ICON.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -637,7 +637,7 @@
     <None Include="Resources\Pokemons\p479_5.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ball_72px_1226110_easyicon.net.ico" />
+    <Content Include="ICON.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
