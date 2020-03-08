@@ -15,4 +15,4 @@ https://github.com/cyGnail/PokemmoHelper/releases/tag/1.0 下载安装包并解�
 选择合适的的路径安装;
 在桌面，开始菜单，安装路径处运行“pokemmoHelper.exe”快捷方式;
 打开后应该就知道如何使用了（详细信息请阅读须知.txt）;
-下载地址除安装包之外的另一个exe文件是宝可梦伤害计算器，可以辅助使用。
+安装包中的另一个exe文件是宝可梦伤害计算器，可以辅助使用。
