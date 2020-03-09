@@ -61,9 +61,22 @@
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.radioButton_ability1 = new System.Windows.Forms.RadioButton();
             this.radioButton_ability2 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_type1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_type2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // button_generate
@@ -82,7 +95,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.radioButton1.Location = new System.Drawing.Point(51, 103);
+            this.radioButton1.Location = new System.Drawing.Point(30, 103);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(53, 25);
             this.radioButton1.TabIndex = 1;
@@ -94,7 +107,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.radioButton2.Location = new System.Drawing.Point(178, 103);
+            this.radioButton2.Location = new System.Drawing.Point(127, 103);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(52, 25);
             this.radioButton2.TabIndex = 2;
@@ -107,7 +120,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.radioButton3.Location = new System.Drawing.Point(309, 103);
+            this.radioButton3.Location = new System.Drawing.Point(225, 103);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(53, 25);
             this.radioButton3.TabIndex = 3;
@@ -252,23 +265,23 @@
             // textBox0
             // 
             this.textBox0.Font = new System.Drawing.Font("幼圆", 10F);
-            this.textBox0.Location = new System.Drawing.Point(8, 103);
+            this.textBox0.Location = new System.Drawing.Point(8, 119);
             this.textBox0.Multiline = true;
             this.textBox0.Name = "textBox0";
             this.textBox0.ReadOnly = true;
             this.textBox0.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox0.Size = new System.Drawing.Size(191, 184);
+            this.textBox0.Size = new System.Drawing.Size(191, 168);
             this.textBox0.TabIndex = 17;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("幼圆", 10F);
-            this.textBox1.Location = new System.Drawing.Point(199, 103);
+            this.textBox1.Location = new System.Drawing.Point(199, 119);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(188, 184);
+            this.textBox1.Size = new System.Drawing.Size(188, 168);
             this.textBox1.TabIndex = 18;
             // 
             // pictureBox1
@@ -445,11 +458,133 @@
             this.radioButton_ability2.UseVisualStyleBackColor = true;
             this.radioButton_ability2.CheckedChanged += new System.EventHandler(this.radioButton_ability2_CheckedChanged);
             // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.radioButton5.Location = new System.Drawing.Point(313, 103);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(76, 25);
+            this.radioButton5.TabIndex = 38;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "未分级";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(46, 93);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.ReadOnly = true;
+            this.numericUpDown1.Size = new System.Drawing.Size(42, 21);
+            this.numericUpDown1.TabIndex = 39;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(142, 93);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.ReadOnly = true;
+            this.numericUpDown2.Size = new System.Drawing.Size(42, 21);
+            this.numericUpDown2.TabIndex = 40;
+            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(245, 93);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.ReadOnly = true;
+            this.numericUpDown3.Size = new System.Drawing.Size(42, 21);
+            this.numericUpDown3.TabIndex = 41;
+            this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(345, 93);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.ReadOnly = true;
+            this.numericUpDown4.Size = new System.Drawing.Size(42, 21);
+            this.numericUpDown4.TabIndex = 42;
+            this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("幼圆", 10F);
+            this.label12.Location = new System.Drawing.Point(5, 96);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 14);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "天气";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("幼圆", 10F);
+            this.label13.Location = new System.Drawing.Point(99, 96);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 14);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "光墙";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("幼圆", 10F);
+            this.label14.Location = new System.Drawing.Point(192, 96);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 14);
+            this.label14.TabIndex = 45;
+            this.label14.Text = "反射壁";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("幼圆", 10F);
+            this.label15.Location = new System.Drawing.Point(302, 96);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(35, 14);
+            this.label15.TabIndex = 46;
+            this.label15.Text = "空间";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 976);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.numericUpDown4);
+            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.radioButton_ability2);
             this.Controls.Add(this.radioButton_ability1);
             this.Controls.Add(this.comboBox);
@@ -492,6 +627,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_type1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_type2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,6 +670,15 @@
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.RadioButton radioButton_ability1;
         private System.Windows.Forms.RadioButton radioButton_ability2;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
 

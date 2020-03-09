@@ -23,9 +23,11 @@ namespace pokemmoHelper
         private const int OUNum = 41;
         private const int UUNum = 62;
         private const int NUNum = 47;
+        private const int DNNum = 64;
         private static ButtonWithPokemon[] OUButtons = new ButtonWithPokemon[OUNum];
         private static ButtonWithPokemon[] UUButtons = new ButtonWithPokemon[UUNum];
         private static ButtonWithPokemon[] NUButtons = new ButtonWithPokemon[NUNum];
+        private static ButtonWithPokemon[] DNButtons = new ButtonWithPokemon[DNNum];
 
         private static MyPokemon[] myPokemons = new MyPokemon[6];
 
@@ -58,6 +60,7 @@ namespace pokemmoHelper
             ImportJson(Pokemon.OUPokemons, "OU");
             ImportJson(Pokemon.UUPokemons, "UU");
             ImportJson(Pokemon.NUPokemons, "NU");
+            ImportJson(Pokemon.DNPokemons, "DN");
 
 
             //道具列表
@@ -67,6 +70,7 @@ namespace pokemmoHelper
             CreateButtons(OUButtons, Pokemon.OUPokemons, "OU");
             CreateButtons(UUButtons, Pokemon.UUPokemons, "UU");
             CreateButtons(NUButtons, Pokemon.NUPokemons, "NU");
+            CreateButtons(DNButtons, Pokemon.DNPokemons, "DN");
 
             //初始化技能按钮
             CreateButtonsAgain(moveButtons[0], "p1");
@@ -94,9 +98,12 @@ namespace pokemmoHelper
                 button_end.Visible = true;
                 for (int i = 0; i < 6; i++)
                     labels[i].Visible = false;
+
                 radioButton1.Visible = false;
                 radioButton2.Visible = false;
                 radioButton3.Visible = false;
+                radioButton5.Visible = false;
+
                 if (radioButton1.Checked)
                     for (int i = 0; i < OUNum; i++)
                         OUButtons[i].Btn.Visible = false;
@@ -106,10 +113,24 @@ namespace pokemmoHelper
                 else if (radioButton3.Checked)
                     for (int i = 0; i < NUNum; i++)
                         NUButtons[i].Btn.Visible = false;
+                else if (radioButton5.Checked)
+                    for (int i = 0; i < DNNum; i++)
+                        DNButtons[i].Btn.Visible = false;
+
                 for (int i = 0; i < 6; i++)
                     pokemonButtons[i].Btn.Visible = true;
                 textBox0.Visible = true;
                 textBox1.Visible = true;
+
+                numericUpDown1.Visible = true;
+                numericUpDown2.Visible = true;
+                numericUpDown3.Visible = true;
+                numericUpDown4.Visible = true;
+
+                label12.Visible = true;
+                label13.Visible = true;
+                label14.Visible = true;
+                label15.Visible = true;
 
                 //初始化对方宝可梦
                 for (int i = 0; i < 6; i++)
@@ -136,7 +157,7 @@ namespace pokemmoHelper
         /// </summary>
         private void AnalyzeTeam()
         {
-            string display_1="属性分析：\r\n";
+            string display_1="属性分析(不计神奇守护)：\r\n";
             display_1 += Analyze.SubAnalyze(myPokemons, "地面", "飞行", "0", "0", "飘浮", "0", "0", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "电", "地面", "0", "0", "蓄电", "电气引擎", "避雷针", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "普通、格斗", "0", "0", "幽灵", "0", "0", "0", "0");
@@ -147,7 +168,7 @@ namespace pokemmoHelper
             display_1 += Analyze.SubAnalyze(myPokemons, "水(潜在)", "0", "0", "0", "引水", "储水", "0", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "草(潜在)", "0", "0", "0", "食草", "0", "0", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "中毒", "钢", "毒", "0", "免疫", "魔法防守", "毒疗", "0");
-            display_1 += Analyze.SubAnalyze(myPokemons, "灼伤", "火", "0", "0", "毅力", "魔法防守", "水幕", "0");
+            display_1 += Analyze.SubAnalyze(myPokemons, "灼伤", "火", "0", "0", "0", "魔法防守", "水幕", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "麻痹", "电", "0", "0", "柔软", "0", "0", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "睡觉", "0", "0", "0", "0", "不眠", "干劲", "0");
             display_1 += Analyze.SubAnalyze(myPokemons, "寄生种子", "草", "0", "0", "食草", "0", "0", "0");
@@ -196,12 +217,13 @@ namespace pokemmoHelper
         /// </summary>
         private void CreateButtons(ButtonWithPokemon[] buttons, List<Pokemon> pl, string str)  
         {
-            const int buttonLength = 90;
+            const int buttonLength = 95;
             const int buttonWidth = 40;
-            const int buttonInterval = 8;
+            const int buttonInterval_x = 2;
+            const int buttonInterval_y = 6;
             Point[] points = new Point[64];
             for (int i = 0; i < 64; i++)
-                points[i] = new Point(buttonInterval + i % 4 * (buttonLength + buttonInterval), 130 + i / 4 * (buttonWidth + buttonInterval));
+                points[i] = new Point(buttonInterval_x + 4 + i % 4 * (buttonLength + buttonInterval_x), 130 + i / 4 * (buttonWidth + buttonInterval_y));
                       
             for (int i = 0; i < buttons.Length; i++)
             {
@@ -216,7 +238,8 @@ namespace pokemmoHelper
                 buttons[i].Btn.Name = string.Format("{0}button_{1}",str,i);
                 buttons[i].Btn.BackColor = Color.Empty;
                 buttons[i].Btn.Text = buttons[i].Pm.Name;
-                buttons[i].Btn.Font = new Font("幼圆", 12);
+                buttons[i].Btn.Font = new Font("幼圆", 11);
+                buttons[i].Btn.Margin = new Padding(0);
                 buttons[i].Btn.Parent = this;
                 this.Controls.Add(buttons[i].Btn);
                 buttons[i].Btn.Click += new EventHandler(Btn_Click);
@@ -229,13 +252,13 @@ namespace pokemmoHelper
         /// </summary>
         private void CreateButtonsAgain(Button[] buttons, string str)
         {
-            const int buttonLength = 70;
+            const int buttonLength = 75;
             const int buttonWidth = 30;
-            const int buttonInterval_x = 7;
+            const int buttonInterval_x = 2;
             const int buttonInterval_y = 2;
             Point[] points = new Point[moveNum];
             for (int i = 0; i < moveNum; i++)
-                points[i] = new Point(buttonInterval_x + 2 + i % 5 * (buttonLength + buttonInterval_x), 567 + i / 5 * (buttonWidth + buttonInterval_y));
+                points[i] = new Point(buttonInterval_x + 6 + i % 5 * (buttonLength + buttonInterval_x), 567 + i / 5 * (buttonWidth + buttonInterval_y));
 
             for (int i = 0; i < buttons.Length; i++)
             {
@@ -264,6 +287,8 @@ namespace pokemmoHelper
                     UUButtons[i].Btn.Visible = false;
                 for (int i = 0; i < NUNum; i++)
                     NUButtons[i].Btn.Visible = false;
+                for (int i = 0; i < DNNum; i++)
+                    DNButtons[i].Btn.Visible = false;
             }
         }
 
@@ -277,6 +302,8 @@ namespace pokemmoHelper
                     UUButtons[i].Btn.Visible = true;
                 for (int i = 0; i < NUNum; i++)
                     NUButtons[i].Btn.Visible = false;
+                for (int i = 0; i < DNNum; i++)
+                    DNButtons[i].Btn.Visible = false;
             }
         }
 
@@ -290,9 +317,27 @@ namespace pokemmoHelper
                     UUButtons[i].Btn.Visible = false;
                 for (int i = 0; i < NUNum; i++)
                     NUButtons[i].Btn.Visible = true;
+                for (int i = 0; i < DNNum; i++)
+                    DNButtons[i].Btn.Visible = false;
             }
         }
-        
+
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton5.Checked)
+            {
+                for (int i = 0; i < OUNum; i++)
+                    OUButtons[i].Btn.Visible = false;
+                for (int i = 0; i < UUNum; i++)
+                    UUButtons[i].Btn.Visible = false;
+                for (int i = 0; i < NUNum; i++)
+                    NUButtons[i].Btn.Visible = false;
+                for (int i = 0; i < DNNum; i++)
+                    DNButtons[i].Btn.Visible = true;
+            }
+        }
+
 
         /// <summary>
         /// 初始界面核心按钮按下事件
@@ -307,6 +352,8 @@ namespace pokemmoHelper
                 ChoosePokemon(UUButtons);
             else if (radioButton3.Checked)
                 ChoosePokemon(NUButtons);
+            else if (radioButton5.Checked)
+                ChoosePokemon(DNButtons);
 
             //选择宝可梦放入队伍
             void ChoosePokemon(ButtonWithPokemon[] buttons)
@@ -454,13 +501,18 @@ namespace pokemmoHelper
             {
                 if (Types.AllTypes[i].Name == "地面" && mp.MyAbility == "飘浮")
                     resistIndex = 0;
-                else if (Types.AllTypes[i].Name == "电" && (mp.MyAbility == "蓄电" || mp.MyAbility == "避雷针" || mp.MyAbility == "电气引擎")) 
+                else if (Types.AllTypes[i].Name == "电" && (mp.MyAbility == "蓄电" || mp.MyAbility == "避雷针" || mp.MyAbility == "电气引擎"))
                     resistIndex = 0;
-                else if (Types.AllTypes[i].Name == "水" && (mp.MyAbility == "引水" || mp.MyAbility == "储水")) 
+                else if (Types.AllTypes[i].Name == "水" && (mp.MyAbility == "引水" || mp.MyAbility == "储水"))
                     resistIndex = 0;
-                else if (Types.AllTypes[i].Name == "火" && (mp.MyAbility == "引火"))
+                else if (Types.AllTypes[i].Name == "火" && mp.MyAbility == "引火")
                     resistIndex = 0;
-                else if (Types.AllTypes[i].Name == "草" && (mp.MyAbility == "食草"))
+                else if (Types.AllTypes[i].Name == "草" && mp.MyAbility == "食草")
+                    resistIndex = 0;
+                else if ((Types.AllTypes[i].Name == "草" || Types.AllTypes[i].Name == "地面" || Types.AllTypes[i].Name == "虫"
+                    || Types.AllTypes[i].Name == "电" || Types.AllTypes[i].Name == "水" || Types.AllTypes[i].Name == "超能"
+                    || Types.AllTypes[i].Name == "龙" || Types.AllTypes[i].Name == "钢" || Types.AllTypes[i].Name == "毒"
+                    || Types.AllTypes[i].Name == "冰") && mp.MyAbility == "神奇守护") 
                     resistIndex = 0;
                 else
                     resistIndex = mp.Type1.Resist[i] * mp.Type2.Resist[i];
@@ -649,9 +701,25 @@ namespace pokemmoHelper
             radioButton1.Visible = true;
             radioButton2.Visible = true;
             radioButton3.Visible = true;
+            radioButton5.Visible = true;
             radioButton1.Checked = true;
             radioButton2.Checked = false;
-            radioButton3.Checked = false; ;
+            radioButton3.Checked = false;
+            radioButton5.Checked = false;
+
+            numericUpDown1.Visible = false;
+            numericUpDown2.Visible = false;
+            numericUpDown3.Visible = false;
+            numericUpDown4.Visible = false;
+            numericUpDown1.Value = 0;
+            numericUpDown2.Value = 0;
+            numericUpDown3.Value = 0;
+            numericUpDown4.Value = 0;
+
+            label12.Visible = false;
+            label13.Visible = false;
+            label14.Visible = false;
+            label15.Visible = false;
 
             pokemonNum = 0;
 
@@ -768,6 +836,5 @@ namespace pokemmoHelper
                 Analyze.AddMove(pl[i], "玛狃拉", "追打", "物理");
             }
         }
-
     }
 }

@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pokemmoHelper.exe" size="11799008">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pokemmoHelper.exe" size="16495584">
       <assemblyIdentity name="pokemmoHelper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VLwy809H8WvSCc7iy1LWf7rrHugPxgHYixn8J4XtKkU=</dsig:DigestValue>
+        <dsig:DigestValue>wUnM7gqBOCLt1StFqPP5DAIFXUPpm5JU9EAyju9s+BU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

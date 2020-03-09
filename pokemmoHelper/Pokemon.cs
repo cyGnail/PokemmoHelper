@@ -22,6 +22,7 @@ namespace pokemmoHelper
         public static List<Pokemon> OUPokemons = new List<Pokemon>();
         public static List<Pokemon> UUPokemons = new List<Pokemon>();
         public static List<Pokemon> NUPokemons = new List<Pokemon>();
+        public static List<Pokemon> DNPokemons = new List<Pokemon>();
 
         public Pokemon()
         {
